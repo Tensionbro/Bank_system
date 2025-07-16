@@ -32,7 +32,7 @@ public class Dashboard extends JFrame {
     }
 
     void deposit() {
-        String amountStr = JOptionPane.showInputDialog("Enter amount to deposit:");
+        String amountStr = JOptionPane.showInputDialog("Enter amount to be deposit:");
         try (Connection conn = DBConnection.connect()) {
             double amount = Double.parseDouble(amountStr);
             PreparedStatement ps = conn.prepareStatement("UPDATE users SET balance = balance + ? WHERE id = ?");
